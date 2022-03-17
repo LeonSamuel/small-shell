@@ -2,7 +2,7 @@
 
 A bash-like shell application written in C
  	
-## Functionalities
+## Functionality
   ```
     - Executes 3 commands exit, cd, and status via code built into 
       the shell
