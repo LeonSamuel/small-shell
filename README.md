@@ -13,7 +13,7 @@ A bash-like shell application written in C
     - Provides expansion for the variable $$ into current PID
     - Supports running commands in foreground and background processes
     - Implements custom handlers for 2 signals, SIGINT and SIGTSTP 
-    - SIGINT will exit foreground processes without exiting the parent program 
+    - SIGINT exits all foreground processes without exiting parent program 
     - Capability to activate foreground mode using SIGTSTP which disables
       the ability to use background processes
     - Handles blank lines and comments, which are lines beginning 
