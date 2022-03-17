@@ -21,8 +21,8 @@ A bash-like shell application written in C
 
 
 ## Installation
-  To compile and run simply run these commands while in the directory
-  with the smallsh.c:
+  To compile and run, simply run these commands while in the directory
+  containing the smallsh.c file:
   ```
     gcc -o smallsh smallsh.c
     ./smallsh
