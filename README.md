@@ -4,20 +4,20 @@ A bash-like shell application written in C
  	
 ## Functionalities
   ```
-    - Handles blank lines and comments, which are lines beginning 
-      with the # character
-    - Provides expansion for the variable $$ into PID
+
     - Executes 3 commands exit, cd, and status via code built into 
       the shell
     - Executes other commands by creating new processes using a function 
       from the exec family of functions
     - Supports input and output redirection using the dup2() command
+    - Provides expansion for the variable $$ into current PID
     - Supports running commands in foreground and background processes
     - Implements custom handlers for 2 signals, SIGINT and SIGTSTP 
-    - Handles signals passed in from the user such as CTR^C to exit 
-      a foreground process without exiting the parent program. 
-    - Capability to activate foreground mode using CTR^Z which
-      disables the ability to use background processes
+    - SIGINT will exit foreground processes without exiting the parent program 
+    - Capability to activate foreground mode using SIGTSTP which disables
+      the ability to use background processes
+    - Handles blank lines and comments, which are lines beginning 
+      with the # character
   ```
 
 
