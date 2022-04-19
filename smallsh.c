@@ -4,30 +4,30 @@
 *
 * Description:
 *     Program functions as a typical sh command line handler.
-*	  Supports running programs in foreground and background.
-*	  User can enter foreground only mode by pressing ^C^Z.
+*     Supports running programs in foreground and background.
+*     User can enter foreground only mode by pressing ^C^Z.
 */
 
-#include <stdio.h>		// printf and perror
-#include <stdlib.h>		// exit
+#include <stdio.h>			// printf and perror
+#include <stdlib.h>			// exit
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <unistd.h>		// execv, getpid, fork
+#include <unistd.h>			// execv, getpid, fork
 #include <fcntl.h>
-#include <sys/wait.h>	// waitpid
+#include <sys/wait.h>			// waitpid
 #include <signal.h>
 
-char userInput[2048];				// stdin input
+char userInput[2048];			// stdin input
 int backgroundChildExitMethod;		// child process exit method, 0 success, 1 fail
-int exitStatus = 0;					// most recent non-built in exit status, 0 success, 1 fail
+int exitStatus = 0;			// most recent non-built in exit status, 0 success, 1 fail
 const char* backgroundArray[25];	// tracks background processes to output their PID once completed after users next input but before returning cmd
 int backgroundArrayIndex = 0;		// for looping through background arrays
-int foregroundMode = 1;				// All cmds will be treated at foreground cmds is set to 0 
-#define EXIT "exit"					// command to exit program due to ^Z signal handler being disabled
-#define MAX 256						// max file size
+int foregroundMode = 1;			// All cmds will be treated at foreground cmds is set to 0 
+#define EXIT "exit"			// command to exit program due to ^Z signal handler being disabled
+#define MAX 256				// max file size
 
 
 // The head of the linked list
@@ -47,7 +47,6 @@ struct input
 	char* inputFile;
 	char* outputFile;
 	int* background;
-
 	//struct input* next;
 };
 
@@ -248,10 +247,10 @@ int main()
 {
 
 
-	pid_t spawnpid = -5;		//require for assignment 
+	pid_t spawnpid = -5;		 
 	int childStatus;			//return status number to main
 	int childPID;				//returned pid from wait()
-	//int* foregroundMode = 1;			//1 is background mode, 0 is foregroundMode
+	//int* foregroundMode = 1;		//1 is background mode, 0 is foregroundMode
 
 	//initiate signal catch for parent process
 	struct sigaction SIGINT_action = {0};
